@@ -34,7 +34,12 @@ function checkInputs() {
     else {
         //add success class
         setSuccessFor(username);
+        localStorage.setItem("username", usernameValue)
+        
     }
+
+
+
 
     if (emailValue === '') {
 
@@ -46,13 +51,21 @@ function checkInputs() {
         setErrorFor(email, 'Email  not valid ');
     } else {
         setSuccessFor(email);
+        localStorage.setItem("email", emailValue)
     }
+
+       
+
+
 
     if (passwordValue === '') {
         setErrorFor(password, 'password cannot be empty')
     } else {
         setSuccessFor(password)
+        localStorage.setItem('password', passwordValue)
     }
+
+
 
     if(confirmValue === '') {
         setErrorFor(confirmm, 'confirm password cannot be empty')
@@ -63,6 +76,8 @@ function checkInputs() {
     }
     else{
         setSuccessFor(confirmm)
+        localStorage.setItem('confirm', confirmValue)
+        document.location.href="../Login/login.html"
     }
 
 
@@ -100,4 +115,6 @@ function isEmail(email) {
 function isUser(username){
       return /^[A-Za-z]/.test(username);
 }
+
+
 
